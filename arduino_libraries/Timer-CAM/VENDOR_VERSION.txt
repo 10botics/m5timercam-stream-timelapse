@@ -1,0 +1,11 @@
+Upstream: https://github.com/m5stack/TimerCam-arduino
+Commit: ca24786e3cecdad060d86d6eb1cbc299685591b9
+Vendored/patched: 2026-04-04
+
+Course patches applied on top of this snapshot:
+- src/utility/Power_Class.cpp: LEDC_HIGH_SPEED_MODE -> LEDC_LOW_SPEED_MODE (Arduino-ESP32 3.x)
+- src/utility/RTC8563_Class.h: #include <cstddef> (with existing <cstdint>) for stricter toolchains
+
+Power_Class.h already uses ADC1_CHANNEL_2 in this upstream revision.
+
+Refresh: clone or pull TimerCam-arduino, re-apply patches if upstream lags, update Commit line above.

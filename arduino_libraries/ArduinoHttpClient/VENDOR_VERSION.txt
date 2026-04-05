@@ -1,0 +1,5 @@
+Upstream: https://github.com/arduino-libraries/ArduinoHttpClient
+Commit: 3596631270648e6b22067a79e2746488f8ea041b
+Vendored (unmodified): 2026-04-04
+
+Timer-CAM (library.properties) declares depends=ArduinoHttpClient — this copy satisfies that dependency offline.
