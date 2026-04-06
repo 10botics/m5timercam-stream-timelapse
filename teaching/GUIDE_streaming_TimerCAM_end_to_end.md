@@ -30,7 +30,8 @@ Optional: **second TimerCAM** + timelapse sketch for scheduled uploads only (not
 
 ## 3. Install Arduino tooling
 
-**Short path:** follow the numbered steps in **[`INSTALL.md`](INSTALL.md)** — it covers IDE, Espressif core, and copying the **bundled** libraries from [`../arduino_libraries/`](../arduino_libraries/) (pre-patched Timer-CAM + ArduinoHttpClient). You normally **do not** install Timer-CAM from Library Manager when using this repo.
+**Shortest path:** **[`INSTALL_SIMPLE.md`](INSTALL_SIMPLE.md)** (checklist only).  
+**With explanations:** **[`INSTALL.md`](INSTALL.md)** — IDE, Espressif core, and copying the **bundled** libraries from [`../arduino_libraries/`](../arduino_libraries/) (pre-patched Timer-CAM + ArduinoHttpClient). You normally **do not** install Timer-CAM from Library Manager when using this repo.
 
 ### 3.1 Arduino IDE 2.x
 
@@ -169,7 +170,8 @@ The **ngrok agent does not run on the ESP32**. It runs on a **PC (or Pi) on the 
 
 | Path | Purpose |
 |------|---------|
-| [`INSTALL.md`](INSTALL.md) | Numbered setup: IDE, Espressif core, bundled libraries, sketch |
+| [`INSTALL_SIMPLE.md`](INSTALL_SIMPLE.md) | Minimal step list (no extra detail) |
+| [`INSTALL.md`](INSTALL.md) | Numbered setup + detail: IDE, Espressif core, libraries, sketch |
 | [`../arduino_libraries/Timer-CAM`](../arduino_libraries/Timer-CAM) | Patched Timer-CAM (see `VENDOR_VERSION.txt`) |
 | [`../arduino_libraries/ArduinoHttpClient`](../arduino_libraries/ArduinoHttpClient) | Dependency of Timer-CAM |
 | [`../m5cam_stream_server/m5cam_stream_server.ino`](../m5cam_stream_server/m5cam_stream_server.ino) | Streaming HTTP server + Basic Auth |

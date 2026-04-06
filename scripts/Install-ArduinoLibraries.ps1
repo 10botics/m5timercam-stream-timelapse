@@ -23,4 +23,4 @@ Get-ChildItem -LiteralPath $sourceDir -Directory | ForEach-Object {
 
 Write-Host ""
 Write-Host "Done. Restart Arduino IDE if it was open, then open m5cam_stream_server and compile."
-Write-Host "Setup steps: teaching/INSTALL.md"
+Write-Host "Next: teaching/INSTALL_SIMPLE.md or teaching/INSTALL.md"

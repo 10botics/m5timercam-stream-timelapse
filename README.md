@@ -4,12 +4,13 @@ Arduino sketches and documentation for the **M5Stack TimerCAM** (ESP32 + OV3660)
 
 ## Teaching & setup docs
 
-All lesson and install write-ups live in **[`teaching/`](teaching/)**. Start with [`teaching/INSTALL.md`](teaching/INSTALL.md).
+All lesson and install write-ups live in **[`teaching/`](teaching/)**. **Easiest path:** [`teaching/INSTALL_SIMPLE.md`](teaching/INSTALL_SIMPLE.md) (short steps only). More detail: [`teaching/INSTALL.md`](teaching/INSTALL.md).
 
 | Item | Description |
 |------|-------------|
 | [`teaching/README.md`](teaching/README.md) | Index of teaching documents |
-| [`teaching/INSTALL.md`](teaching/INSTALL.md) | **Start here** — numbered setup (IDE, Espressif core, libraries, sketch defines, upload) |
+| [`teaching/INSTALL_SIMPLE.md`](teaching/INSTALL_SIMPLE.md) | **Minimal checklist** — IDE, board, copy libraries, open sketch, upload, browser |
+| [`teaching/INSTALL.md`](teaching/INSTALL.md) | Same setup with explanations and optional PowerShell script |
 | [`teaching/GUIDE_streaming_TimerCAM_end_to_end.md`](teaching/GUIDE_streaming_TimerCAM_end_to_end.md) | Full project guide: LAN test, security, **ngrok**, troubleshooting, hardware notes |
 | [`teaching/LESSON_TimerCAM_Arduino_setup.md`](teaching/LESSON_TimerCAM_Arduino_setup.md) | Teaching notes: compile errors, core vs library skew, manual patches if not using the bundled library |
 | [`teaching/TEACHER_lesson_smoothing_TimerCAM.md`](teaching/TEACHER_lesson_smoothing_TimerCAM.md) | **Teacher prep:** install hiccups, Wi‑Fi/isolation, lesson scope, what is hard to fix in one period |
@@ -25,7 +26,7 @@ All lesson and install write-ups live in **[`teaching/`](teaching/)**. Start wit
 
 ## Quick start
 
-1. Install **Arduino IDE 2** and the **Espressif ESP32** board package; select board **M5Stack Timer CAM** (see [`teaching/INSTALL.md`](teaching/INSTALL.md)).
+1. Follow **[`teaching/INSTALL_SIMPLE.md`](teaching/INSTALL_SIMPLE.md)** (or [`teaching/INSTALL.md`](teaching/INSTALL.md) if you want the long version).
 2. Run [`scripts/Install-ArduinoLibraries.ps1`](scripts/Install-ArduinoLibraries.ps1) from the repo root, or copy [`arduino_libraries/Timer-CAM`](arduino_libraries/Timer-CAM) and [`arduino_libraries/ArduinoHttpClient`](arduino_libraries/ArduinoHttpClient) into your Arduino `libraries` folder.
 3. Open [`m5cam_stream_server/m5cam_stream_server.ino`](m5cam_stream_server/m5cam_stream_server.ino), set **`WIFI_SSID`**, **`WIFI_PASSWORD`**, **`WWW_USER`**, **`WWW_PASS`**, then upload.
 4. Serial Monitor **115200** → note the camera IP → browser: `http://<ip>/` (same **2.4 GHz** Wi‑Fi as the ESP32).

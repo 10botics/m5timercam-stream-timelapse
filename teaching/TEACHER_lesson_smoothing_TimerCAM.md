@@ -10,14 +10,26 @@ Students follow **INSTALL** for the step-by-step checklist; use this handout for
 
 | Issue | What happens | Mitigation |
 |--------|----------------|----------|
-| **Windows-centric script** | Step 3 recommends PowerShell; macOS/Linux students only have “manual copy.” | Publish **one** path per OS on the board, or demo manual copy for everyone once. |
-| **PowerShell / managed PCs** | `Install-ArduinoLibraries.ps1` may be blocked or confusing. | Keep **Option B** (manual copy) ready; budget 5–10 minutes for first-time copies. |
+| **Windows-centric script** | See **§1.1** below — not a different *library*, only a different *delivery* for the copy step. | Teach **Option B (manual copy)** once for the whole room so Mac/Linux match Windows; list sketchbook `libraries` paths on the board. |
+| **PowerShell / managed PCs** | `Install-ArduinoLibraries.ps1` may be blocked (`ExecutionPolicy`, GPO, “running scripts is disabled”). | Use **Option B**; explain the script is optional sugar, not required for correctness. |
 | **“Four `#define`s” wording** | [`INSTALL.md`](INSTALL.md) says four lines; `WWW_USER` is often left as `admin`. | Tell the class: “Set Wi‑Fi password, web password, and SSID; user can stay `admin`.” |
 | **Duplicate Timer-CAM library** | Student already installed **Timer-CAM from Library Manager**; bundled **patched** copy may not be the one used. | **Uninstall** Library Manager “Timer-CAM” before copying from `arduino_libraries/` (repo root), or only use the bundled copy. |
 | **USB / COM not documented in INSTALL** | No COM port, or “board not found.” | Spare **data** USB cables; try another USB port; M5 docs mention **FTDI/VCP** on some PCs — have a driver link ready. |
 | **Board menu oversimplified** | Student picks wrong ESP32 board or a different core. | **Lock** menu: everyone → **Espressif** package → **M5Stack Timer CAM** (exact label may vary). See [`LESSON_TimerCAM_Arduino_setup.md`](LESSON_TimerCAM_Arduino_setup.md) if `esp_camera.h` fails. |
 | **ESP32 core version drift** | “e.g. 3.3.x” still allows 2.0 vs 3.3 split **across the room** → different compile errors. | Pick **one** core version for the cohort; write it on the board (e.g. “ESP32 3.3.7 only”). |
 | **Power-on unfamiliarity** | TimerCAM-style units may need a deliberate **power-on** (hold power). Silent Serial looks “dead.” | Demo power-on once; mention **battery** charge if applicable. |
+
+### 1.1 Why the install feels “Windows-only” (`Install-ArduinoLibraries.ps1`)
+
+The automated path in [`INSTALL.md`](INSTALL.md) step 3 is a **PowerShell** script because:
+
+1. **It does nothing magic.** It copies `arduino_libraries/*` into `%USERPROFILE%\Documents\Arduino\libraries\` (the standard Windows sketchbook libraries path). The **patched Timer-CAM** and **ArduinoHttpClient** end up in the same place as if students dragged the folders in File Explorer.
+
+2. **There is no platform-neutral “Arduino install” API** in the repo — only this one script. **macOS** and **Linux** users are expected to copy the same two folders to their sketchbook `libraries` (see INSTALL **Option B** and the OS table there).
+
+3. **`Set-ExecutionPolicy -Scope Process -ExecutionPolicy Bypass`** is documented because many Windows labs default to **Restricted** script policy; without it, double-clicking or running the `.ps1` fails with a scary red error. **Scope Process** limits the change to that PowerShell session only — reasonable for a classroom demo, but some **managed** PCs still block scripts entirely → manual copy.
+
+4. **Teaching takeaway:** Lead with **manual copy** in a mixed-OS class so nobody thinks the script is *required*; use the script on Windows only when it saves time and IT allows it.
 
 ---
 
