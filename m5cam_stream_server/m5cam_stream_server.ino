@@ -8,12 +8,12 @@
 #include <esp_log.h>
 #include "M5TimerCAM.h"
 
-#define WIFI_SSID "YOUR_WIFI_SSID"
-#define WIFI_PASSWORD "YOUR_WIFI_PASSWORD"
+#define WIFI_SSID "smart1"
+#define WIFI_PASSWORD "abcd1234"
 
 /* Web UI — change defaults; Basic Auth over HTTP is not encrypted on the LAN wire. */
 #define WWW_USER "admin"
-#define WWW_PASS "YOUR_STRONG_PASSWORD"
+#define WWW_PASS "1234"
 
 static const char *kAuthRealm = "TimerCAM";
 
